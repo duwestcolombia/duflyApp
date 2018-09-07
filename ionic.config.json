@@ -1,0 +1,7 @@
+{
+  "name": "dufly",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
