@@ -4,27 +4,63 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { HttpModule } from "@angular/http";
+
+import { HttpClientModule } from '@angular/common/http';
+
+
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+import { IonicStorageModule } from '@ionic/storage';
+
+
+// Importar los servicios
+import {  UserProvider,
+          SolicitudesProvider,
+          StorageProvider
+} from '../providers/index.services';
+
+
+// importar la paginas
+import { 
+  LoginPage,
+  AccountPage,
+  HomePage,
+  TabsPage
+ } from "../pages/index.pages";
+
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage,
+    AccountPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage,
+    AccountPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserProvider,
+    SolicitudesProvider,
+    StorageProvider
   ]
 })
 export class AppModule {}
