@@ -12,12 +12,13 @@
   </button>
   <ion-list>
 
-      <ion-item>
-          <h2># 2</h2>
-          <p>Visita comercial</p>
-          <ion-badge item-end color="primary">Nueva</ion-badge>          
+      <ion-item *ngFor="let res of datos" (click)="verDetalle(res.COD_SOLICITUD)">
+          <h2>Solicitud # {{res.COD_SOLICITUD}}</h2>
+          <p>{{res.OBJETIVO_SOLICITUD}}</p>
+          <ion-badge item-end color="primary">{{res.ESTADO_SOLICITUD}}</ion-badge>          
       </ion-item>
 
   </ion-list>
+ 
   
 </ion-content>

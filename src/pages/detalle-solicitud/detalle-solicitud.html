@@ -1,0 +1,95 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Solicitud # {{codSolicitud}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+    <ion-list>
+        <ion-item color="light">
+            <h2>Información de la solicitud</h2>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item >
+          <h2>Vuelo</h2>
+          <p item-end>{{detalle.res}}</p>
+        </ion-item>
+        
+    </ion-list>
+
+    <ion-list>
+      <ion-item color="light">
+          <h2>Detalles de la reserva de vuelos</h2>
+          <ion-icon name="plane" item-end></ion-icon>
+      </ion-item>
+    </ion-list>
+   
+    <ion-card *ngFor="let vuelo of detalle.Vuelos">
+      
+        <ion-card-content>
+            <ion-list >
+                <ion-item >
+                  <h2>Ciudad de origen</h2>
+                  <p item-end>{{vuelo.CIUD_ORIGEN}}</p>                
+                </ion-item>
+                <ion-item>
+                    <h2>Ciudad de destino</h2>
+                    <p item-end>{{vuelo.CIUD_DESTINO}}</p>
+                </ion-item>
+                <ion-item>
+                    <h2>Fecha de salida</h2>
+                    <p item-end>{{vuelo.FIDA_RESERVA}}</p>
+                </ion-item>
+                <ion-item>
+                    <h2>Fecha de regreso</h2>
+                    <p item-end>{{vuelo.FREGRESO_RESERVA}}</p>
+                </ion-item>
+                
+            </ion-list>
+        </ion-card-content>
+      
+      </ion-card>
+
+
+
+      <ion-list>
+          <ion-item color="light">
+              <h2>Detalles de la reserva de hoteles</h2>
+              <ion-icon name="timer" item-end></ion-icon>
+          </ion-item>
+        </ion-list>
+
+    <ion-card *ngFor="let hotel of detalle.Hoteles">
+      
+        <ion-card-content>
+            <ion-list >
+                <ion-item >
+                  <h2>Ciudad de Hospedaje</h2>
+                  <p item-end>{{hotel.CIUD_HOTEL}}</p>                
+                </ion-item>
+                <ion-item>
+                    <h2>Fecha de ingreso</h2>
+                    <p item-end>{{hotel.FINHOTEL_RESERVA}}</p>
+                </ion-item>
+                <ion-item>
+                    <h2>Fecha de salida</h2>
+                    <p item-end>{{hotel.FSALHOTEL_RESERVA}}</p>
+                </ion-item>
+                <ion-item>
+                    <h2>Tipo de Habitación</h2>
+                    <p item-end>{{hotel.TIPOHAB_RESERVA}}</p>
+                </ion-item>
+                
+            </ion-list>
+        </ion-card-content>
+      
+      </ion-card>
+
+
+</ion-content>

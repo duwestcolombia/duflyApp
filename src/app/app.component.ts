@@ -24,6 +24,7 @@ export class MyApp {
         if(result){
           this.rootPage = TabsPage
         }else{
+          this._strService.eliminarStorage('logueado');
           this.rootPage = LoginPage;
         }
         

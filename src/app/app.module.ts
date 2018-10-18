@@ -26,7 +26,8 @@ import {
   LoginPage,
   AccountPage,
   HomePage,
-  TabsPage
+  TabsPage,
+  DetalleSolicitudPage
  } from "../pages/index.pages";
 
 
@@ -37,7 +38,8 @@ import {
     HomePage,
     LoginPage,
     AccountPage,
-    TabsPage
+    TabsPage,
+    DetalleSolicitudPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import {
     HomePage,
     LoginPage,
     AccountPage,
-    TabsPage
+    TabsPage,
+    DetalleSolicitudPage
   ],
   providers: [
     StatusBar,

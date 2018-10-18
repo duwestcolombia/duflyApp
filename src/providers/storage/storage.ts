@@ -26,10 +26,17 @@ export class StorageProvider {
     if(this.platform.is('cordova') || this.platform.is('android')){
 
       return new Promise((resolve,reject)=>{
-        this.storage.get(key).then((result)=>{
-          resolve(result);
-        },(err)=>{
-          reject(err);
+        this.storage.ready().then(()=>{
+          this.storage.get(key).then((result)=>{
+            if (result) {              
+              resolve(result);
+            }else{
+              resolve(false);
+            }
+          },(err)=>{
+            reject(err);
+          });
+          
         })
 
       })

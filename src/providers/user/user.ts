@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Http, URLSearchParams } from "@angular/http";
 import { Injectable } from '@angular/core';
 
@@ -26,14 +26,7 @@ export class UserProvider {
     data.append("Correo",correo);
     data.append("Password",contrasena);
 
-    console.log(data);
-    
-
-    // return this.http.post(url,data)
-    //                 .map( resp =>{
-    //                   let data_resp = resp.json();                      
-                      
-    //                 })
+   
     return new Promise((resolve,reject)=>{
       this.http.post(url,data).subscribe(res =>{
         resolve(res.json());
